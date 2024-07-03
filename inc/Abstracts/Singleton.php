@@ -8,6 +8,15 @@ namespace Inc\Abstracts;
 
 abstract class Singleton {
 
+
+	/**
+	 * Contains instances of all singleton classes.
+	 *
+	 * @var array
+	 */
+	private static $instances;
+
+
 	/**
 	 * Protected constructor to prevent creating a new instance of the Singleton
 	 * via the `new` operator from outside this class.
@@ -26,14 +35,13 @@ abstract class Singleton {
 		throw new \Exception( 'Cannot unserialize singleton' );
 	}
 
-	/**
-	 * Contains instances of all singleton classes.
-	 *
-	 * @var array
-	 */
-	private static $instances;
 
-	public static function getInstance() {
+	/**
+	 * Get child class instance.
+	 *
+	 * @return static
+	 */
+	public static function getInstance(): static {
 		$cls = static::class;
 		if ( ! isset( self::$instances[ $cls ] ) ) {
 			self::$instances[ $cls ] = new static();

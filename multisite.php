@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name:     Multisite
  * Plugin URI:      PLUGIN SITE HERE
@@ -28,4 +29,5 @@ if ( file_exists( MT_DIR . 'vendor/autoload.php' ) ) {
 }
 
 
+// Init plugin.
 Loader::getInstance()->load();
