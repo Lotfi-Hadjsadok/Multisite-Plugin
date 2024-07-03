@@ -1,0 +1,16 @@
+{
+    "name": "user/multisite",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "Inc\\": "inc/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lotfi-Hadjsadok",
+            "email": "lotfihadjsadok@gmail.com"
+        }
+    ],
+    "require": {}
+}
