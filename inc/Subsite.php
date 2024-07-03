@@ -19,7 +19,7 @@ class Subsite extends Singleton {
 
 	public function __construct()
 	{
-		add_action('init',array($this,'extract_current_domain'));
+		$this->domain = $this->extract_subdomains($_SERVER['HTTP_HOST']);
 	}
 
 	/**
@@ -55,10 +55,4 @@ class Subsite extends Singleton {
 		}
 	
 	}
-
-
-	public function extract_current_domain(){
-		$this->domain = $this->extract_subdomains($_SERVER['HTTP_HOST']);
-	}
-	
 }
