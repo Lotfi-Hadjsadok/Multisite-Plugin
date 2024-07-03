@@ -14,6 +14,7 @@
  */
 
 use Inc\Loader;
+use Inc\Subsite;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die;
@@ -31,3 +32,12 @@ if ( file_exists( MT_DIR . 'vendor/autoload.php' ) ) {
 
 // Init plugin.
 Loader::getInstance()->load();
+
+
+
+add_action(
+	'init',
+	function () {
+		var_dump(Subsite::getInstance()->domain);
+	}
+);

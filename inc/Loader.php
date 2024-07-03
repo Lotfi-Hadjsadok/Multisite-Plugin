@@ -18,6 +18,8 @@ class Loader extends Singleton {
 	 * @return void
 	 */
 	public function load(): void {
+		// Utility classes.
+		Subsite::getInstance();
 		// Post types.
 		PostTypes\Subsites::getInstance();
 	}
